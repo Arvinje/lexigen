@@ -1,6 +1,7 @@
 require "lexigen/version"
 require "matrix"
 require "lexigen/state_machine"
+require "lexigen/token"
 
 module Lexigen
 
@@ -15,5 +16,5 @@ module Lexigen
     yield definition
     definition.to_matrix
   end
-  
+
 end
