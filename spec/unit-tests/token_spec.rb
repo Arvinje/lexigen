@@ -8,8 +8,8 @@ describe Lexigen::Token do
     it { is_expected.to respond_to :word= }
     it { is_expected.to respond_to :row }
     it { is_expected.to respond_to :row= }
-    it { is_expected.to respond_to :col }
-    it { is_expected.to respond_to :col= }
+    it { is_expected.to respond_to :column }
+    it { is_expected.to respond_to :column= }
     it { is_expected.to respond_to :type }
     it { is_expected.to respond_to :type= }
     it { is_expected.to respond_to :block_order }
