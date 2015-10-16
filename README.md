@@ -7,8 +7,13 @@
 
 ```ruby
 Lexigen.define do |sm|
-  sm.from(0).to(1).if(/w+/)
-  sm.from(1).to(2).if(/d+/)
+  sm.from(0).to(1).if(/\d/)
+  sm.from(1).to(1).if(/\d/)
+  sm.from(1).unless(/\d/).return_as(:integer)
+
+  sm.from(1).to(2).if(/\./)
+  sm.from(2).to(2).if(/\d/)
+  sm.from(2).unless(/\d/).return_as(:float)
 end
 ```
 

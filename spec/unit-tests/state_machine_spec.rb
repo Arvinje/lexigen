@@ -67,6 +67,22 @@ describe Lexigen::StateMachine do
     end
   end
 
+  describe "#return_as" do
+    let(:state_machine) { Lexigen::StateMachine.new }
+
+    it "adds a return state to return_tokens array" do
+      state_machine.from(0).if(/\d/).return_as(:integer)
+      expect(state_machine.return_tokens.first).to eql({ if: /\d/, unless: nil, type: :integer })
+    end
+
+    it "adds some return states to return_tokens array" do
+      state_machine.from(4).if(/\w/).return_as(:float)
+      state_machine.from(2).unless(/\d/).return_as(:integer)
+      expect(state_machine.return_tokens[4]).to eql({ if: /\w/, unless: nil, type: :float })
+      expect(state_machine.return_tokens[2]).to eql({ if: nil, unless: /\d/, type: :integer })
+    end
+  end
+
   describe "#to_matrix" do
     let(:state_machine) { Lexigen::StateMachine.new }
     before do
@@ -78,7 +94,7 @@ describe Lexigen::StateMachine do
 
     it "transforms the arrays to a matrix" do
       expect(state_machine.to_matrix.matrix).to eql Matrix[ [nil,nil,nil,nil,{if: "ifcon1", unless: nil}], [nil,nil,nil,nil,nil],
-                                                     [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil], 
+                                                     [nil,nil,nil,nil,nil], [nil,nil,nil,nil,nil],
                                                      [{if: nil, unless: "unlesscon2"},nil,nil,{if: nil, unless: "unlesscon1"},
                                                        {if: "ifcon2", unless: nil} ]]
     end

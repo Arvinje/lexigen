@@ -8,8 +8,9 @@ module Lexigen
   # Easily define a set of state machines and their transitions
   # @example
   # Lexigen.define do |sm|
-  #   sm.from(0).to(2).if(/d+/)
-  #   sm.from(2).to(1).unless(/w+/)
+  #   sm.from(0).to(1).if(/\d/)
+  #   sm.from(1).to(1).if(/\d/)
+  #   sm.from(1).unless(/\d/).return_as(:integer)
   # end
   def self.define
     definition = StateMachine.new
