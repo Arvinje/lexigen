@@ -19,9 +19,8 @@ end
 
 It returns an instance of StateMachine:
 ```ruby
-=> #<Lexigen::StateMachine:0x007f9958823220
- @if_conditions=[/w+/, /d+/],
- @matrix=Matrix[[nil, {:if=>/w+/, :unless=>nil}, nil], [nil, nil, {:if=>/d+/, :unless=>nil}], [nil, nil, nil]],
- @states=[[0, 1], [1, 2]],
- @unless_conditions=[]>
+=> #<Lexigen::StateMachine:0x007fcb621e81d0
+ @matrix=
+  Matrix[[nil, {:if=>/\d/, :unless=>nil}, nil], [nil, {:if=>/\d/, :unless=>nil}, {:if=>/\./, :unless=>nil}], [nil, nil, {:if=>/\d/, :unless=>nil}]],
+ @return_tokens=[nil, {:if=>nil, :unless=>/\d/, :type=>:integer}, {:if=>nil, :unless=>/\d/, :type=>:float}]>
 ```
