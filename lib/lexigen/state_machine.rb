@@ -64,5 +64,15 @@ module Lexigen
       self
     end
 
+    # Generates a lexer based on the state machine
+    # Receives the traget language via an argument
+    # Currently only supports ruby
+    def generate_lexer(language:)
+      case language
+      when 'ruby'
+        Generator.ruby(self)
+      end
+    end
+
   end
 end
