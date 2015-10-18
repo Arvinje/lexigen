@@ -67,9 +67,11 @@ module Lexigen
     # Generates a lexer based on the state machine
     # Receives the traget language via an argument
     # Currently only supports ruby
-    def generate_lexer(language:)
+    # @example
+    # state_machine.generate_lexer :ruby
+    def generate_lexer(language)
       case language
-      when 'ruby'
+      when :ruby
         Generator.ruby(self)
       end
     end

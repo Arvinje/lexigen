@@ -106,7 +106,7 @@ describe Lexigen::StateMachine do
 
       it "calls ruby code generator" do
         allow(Lexigen::Generator).to receive(:ruby).with(state_machine).and_return(:generated_lexer_object)
-        expect(state_machine.generate_lexer(language: 'ruby')).to eql :generated_lexer_object
+        expect(state_machine.generate_lexer(:ruby)).to eql :generated_lexer_object
       end
     end
   end
