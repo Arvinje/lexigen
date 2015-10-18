@@ -8,9 +8,9 @@ describe Lexigen do
 
   describe ".define" do
     before do
-      @state_machine = Lexigen.define do |sm|
-        sm.from(0).to(2).if(/d+/)
-        sm.from(2).to(1).unless(/w+/)
+      @state_machine = Lexigen.define do
+        from(0).to(2).if(/d+/)
+        from(2).to(1).unless(/w+/)
       end
     end
 

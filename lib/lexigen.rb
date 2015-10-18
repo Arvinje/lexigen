@@ -7,14 +7,14 @@ module Lexigen
 
   # Easily define a set of state machines and their transitions
   # @example
-  # Lexigen.define do |sm|
-  #   sm.from(0).to(1).if(/\d/)
-  #   sm.from(1).to(1).if(/\d/)
-  #   sm.from(1).unless(/\d/).return_as(:integer)
+  # Lexigen.define do
+  #   from(0).to(1).if(/\d/)
+  #   from(1).to(1).if(/\d/)
+  #   from(1).unless(/\d/).return_as(:integer)
   # end
-  def self.define
+  def self.define(&block)
     definition = StateMachine.new
-    yield definition
+    definition.instance_eval(&block)
     definition.to_matrix
   end
 

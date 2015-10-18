@@ -6,14 +6,14 @@
 ### 1. Define the state machine
 
 ```ruby
-Lexigen.define do |sm|
-  sm.from(0).to(1).if(/\d/)
-  sm.from(1).to(1).if(/\d/)
-  sm.from(1).unless(/\d/).return_as(:integer)
+Lexigen.define do
+  from(0).to(1).if(/\d/)
+  from(1).to(1).if(/\d/)
+  from(1).unless(/\d/).return_as(:integer)
 
-  sm.from(1).to(2).if(/\./)
-  sm.from(2).to(2).if(/\d/)
-  sm.from(2).unless(/\d/).return_as(:float)
+  from(1).to(2).if(/\./)
+  from(2).to(2).if(/\d/)
+  from(2).unless(/\d/).return_as(:float)
 end
 ```
 
