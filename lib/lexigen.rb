@@ -2,6 +2,8 @@ require "lexigen/version"
 require "matrix"
 require "lexigen/state_machine"
 require "lexigen/token"
+require "lexigen/generator"
+require "lexigen/generators/ruby_generator"
 
 module Lexigen
 
