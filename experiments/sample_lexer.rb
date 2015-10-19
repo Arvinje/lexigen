@@ -1,4 +1,4 @@
-require_relative "lib/lexigen/token"
+require_relative "../lib/lexigen/token"
 
 module Lexigen
   class Lexer
@@ -14,7 +14,7 @@ module Lexigen
     # The currently implemented state machine detects integer,
     # float and identification.
     def next
-      File.open("lib/lexigen/test.txt", 'r') do |f|
+      File.open("experiments/test.txt", 'r') do |f|
         f.seek(@position, IO::SEEK_SET)
         while char = f.getc
 
