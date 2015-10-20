@@ -3,10 +3,10 @@
 
 ## Currently experimenting some ideas!
 
-### 1. Define the state machine
+### 1. Define the state machine (TO BE CHANGED!)
 
 ```ruby
-Lexigen.define do
+machine = Lexigen.define do
   from(0).to(1).if(/\d/)
   from(1).to(1).if(/\d/)
   from(1).unless(/\d/).return_as(:integer)
@@ -23,4 +23,12 @@ It returns an instance of StateMachine:
  @matrix=
   Matrix[[nil, {:if=>/\d/, :unless=>nil}, nil], [nil, {:if=>/\d/, :unless=>nil}, {:if=>/\./, :unless=>nil}], [nil, nil, {:if=>/\d/, :unless=>nil}]],
  @return_tokens=[nil, {:if=>nil, :unless=>/\d/, :type=>:integer}, {:if=>nil, :unless=>/\d/, :type=>:float}]>
+```
+
+## 2. Generate a lexer in the specified language
+
+```ruby
+machine.generate_lexer :ruby
+# generates the lexer in ruby
+# using ruby_generator.rb
 ```
