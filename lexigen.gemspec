@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["Arvinje@gmail.com"]
 
   spec.summary       = %q{A lexer generator in Ruby.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.description   = %q{A simple lexer generator that converts the existing state machine to a working lexer.}
+  spec.homepage      = "https://github.com/Arvinje/lexigen"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
