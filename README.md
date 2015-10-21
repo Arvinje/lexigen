@@ -32,3 +32,9 @@ machine.generate_lexer :ruby
 # generates the lexer in ruby
 # using ruby_generator.rb
 ```
+
+
+TODO:
+-----
+1. Saving the state machine as several related objects instead of a single matrix.
+2. Better syntax when accepting the state machine.
